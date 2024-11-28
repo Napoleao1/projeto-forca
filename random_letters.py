@@ -12,4 +12,4 @@ for letra in chosen_word:
     if letra == usuario_input:
         print("right")
     else:
-       
+       print("wrong")
