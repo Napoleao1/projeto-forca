@@ -1,5 +1,67 @@
 import random
+
+stages = [r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
+
+
 lista_palavras = ["camel", "monkey", "cat"]
+
+lives = 6
 
 chosen_word = random.choice(lista_palavras)
 print(chosen_word)
@@ -12,6 +74,9 @@ word_length = len(chosen_word)
 for position in range(word_length):
     placeholder += "_"
 print(placeholder)
+
+lives = 6
+
 
 #jogador escolhe uma letra
 game_over = False
