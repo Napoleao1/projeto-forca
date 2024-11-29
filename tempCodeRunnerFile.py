@@ -1,2 +1,1 @@
-
-    if  letra == usuario_input:
+.lower()

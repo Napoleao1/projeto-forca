@@ -4,24 +4,37 @@ lista_palavras = ["camel", "monkey", "cat"]
 chosen_word = random.choice(lista_palavras)
 print(chosen_word)
 
-#criando string com espaço em branco
-placeholder = "_"
-
-word_lenght = len(chosen_word) #criando a váriavel para contar as palavras
-
+# criando string com espaço em branco
+placeholder = ""
+# criando a váriavel para contar as palavras
+word_length = len(chosen_word)
 # loop para adicinar os espaços em brancos em qualquer palavra da lista
-for position in range(word_lenght):
-    
-    placeholder += "_" 
+for position in range(word_length):
+    placeholder += "_"
 print(placeholder)
 
-escolha = input("escolha uma letra: ").lower()
-print(escolha)
+#jogador escolhe uma letra
+game_over = False
+correct_letters = []
+
+while not game_over: #loop de escolha
+    escolha = input("escolha uma letra: ").lower()
+# criando váriavel que coloca a letra escolhida pelo usuário na posição _
+    display = ""
+    
 
 
+    for letra in chosen_word:
+        if letra == escolha:
+            display += letra
+            correct_letters.append(escolha)
+        elif letra in correct_letters:
+            display += letra
+        else:
+            display += "_"
 
-for letra in chosen_word:
-    if  letra == escolha:
-        print("right")
-    else:
-        print("wrong")
+    print(display)
+
+    if "_" not in display:
+        game_over = True
+        print("You win")
